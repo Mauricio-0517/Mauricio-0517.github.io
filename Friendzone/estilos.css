@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url(footer.css);
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	font-family: 'Reggae One', cursive;
+}
+body{
+	color: #000;
+	background-color: #82cdab;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%2362acc0' fill-opacity='0.61'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.opciones {
+	background: #F8F8F8;
+	box-shadow: 0px 10px 38px 10px rgba(0,0,0,0.7);
+	border-radius: 13px;
+	padding: 20px;
+	width: 600px;
+	transition: .3s ease all;
+	transform: scale(0.7);
+}
+
+.opciones h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: #000;
+	text-align: center;
+}
+.opciones .div-btn{
+	border-radius: 3px;
+	padding: 10px;
+	margin: 30px 20px;
+}
+.opciones .div-btn .btn-yes{
+	padding: 0 20px;
+	height: 70px;
+	line-height: 70px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 15px;
+	font-size: 30px;
+	transition: .3s ease all;
+	margin-left: 20%;
+	font-weight: 600;
+}
+
+.opciones .div-btn .btn-yes:hover{
+	background: rgba(51,51,51,0.2);
+}
+.opciones .div-btn .btn-ext{
+	position: absolute;
+	margin-left: -10%;
+	float: left;
+	border: double; 
+	margin-top: 0%;
+	font-size: 30px;
+	font-weight: 600;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 15px;
+}
+.opciones .div-btn .btn-ext:hover{
+	background: transparent;
+	color: transparent;
+}
