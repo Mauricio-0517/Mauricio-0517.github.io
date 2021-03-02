@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(footer.css);
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	font-family: 'Reggae One', cursive;
+}
+body{
+	color: #000;
+	background:rgba(0,0,0,0.1);
+	 
+}
+.header{
+	text-align: center;
+	background: rgba(234,234,14,0.8);
+}
+.header p{
+	font-family: 'Roboto', sans-serif;
+	color:#000;
+}
+article{
+	display: inline-block;
+	position: relative;
+}
+.izquierda{
+	display: inline-block;
+	width: 25%;
+	height: 100vh;
+	position: fixed;
+}
+.derecha{
+	display: inline-block;
+	width: 25%;
+	height: 100vh;
+	position: fixed;
+	left: 75%;
+}
+.presentacion{
+	display: inline-block;
+	width: 49%;
+	height: 100vh;
+	position: relative;
+	left: 40%;
+	border: solid;
+}
+.izquierda img{
+	width: 100%;
+	height: 100vh;
+}
+.derecha img{
+	width: 100%;
+	height: 100vh;
+}
