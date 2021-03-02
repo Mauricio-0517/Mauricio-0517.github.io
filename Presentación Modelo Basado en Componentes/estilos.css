@@ -38,11 +38,10 @@ article{
 }
 .presentacion{
 	display: inline-block;
-	width: 49%;
+	width: 50vw;
 	height: 100vh;
 	position: relative;
-	left: 40%;
-	border: solid;
+	left: 24.5vw;
 }
 .izquierda img{
 	width: 100%;
