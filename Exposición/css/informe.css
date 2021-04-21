@@ -5,7 +5,17 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}/*
+.inf{
+    position:relative;
+    left: -80px;
+    width: 40vw;
+    height: 60vh;
+    background: transparent;
 }
+iframe{
+    width: 95vw;
+}*/
 a{
     position: relative;
     top: 20px;  
@@ -26,4 +36,9 @@ a:hover{
     color: #fff;
     animation: 0.5s;
     background: #03a9f4;
+}
+@media (max-width:1024px) {
+    a{
+        top: 350px;  
+    }    
 }
