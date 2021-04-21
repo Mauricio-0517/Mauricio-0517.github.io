@@ -1,0 +1,32 @@
+@import url(header.css);/*
+@import url(tarjetas.css);*/
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #333;
+}
+.contenido{
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 87vh;
+    flex-wrap: wrap;
+}
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+   
+}
+.banner-emi{
+    border: salmon solid;
+    position: relative;
+    left: 0px;
+    width: 540px;
+    height: 200px;
+    margin-bottom:10%;
+}*/

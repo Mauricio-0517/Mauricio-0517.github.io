@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+/*
+
+.tarjetas{
+    border: snow solid;
+    margin: 0;
+    padding: 0;
+    min-height: 70vh;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Antonio', sans-serif;
+}
+.conteiner{
+    transform: translateY(-50px);
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.conteiner .card{
+    position: relative;
+    padding: 10px;
+}
+.conteiner .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    flex-direction: column;
+}
+
+.conteiner .card .face.face1 .content{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transform: translateY(100px);
+}
+.conteiner .card .face.face1 .content img{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.conteiner .card:hover .face.face1 .content{
+    transform: translateY(0);
+    transition: 0.5s;
+    background: #fff;
+}
+.conteiner .card .face.face2{
+    position: relative;
+    height: 90px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0,0,0.8);
+}
+.conteiner .card .face.face2 p{
+    margin: 0;
+    padding: 0;
+}
+.conteiner .card .face.face2 a{
+    margin: 15 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+.conteiner .card .face.face2 a:hover{
+    background: #333;
+    color: #fff;
+}
+@media max-width {
+    
+}*/
+.body{
+    background-color: darkviolet;
+}
+.tarjetas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.tarjeta{
+    margin-bottom: 30px;
+    width: 80vw;
+    height: 30vh;
+    border: 5px rgba(95, 93, 93, 0.644) solid;
+    border-radius: 10px;
+}
+.presentacion{
+    background:rgba(255, 255, 255, 0.808);
+}
+.informe{
+    background:rgba(255, 255, 255, 0.808);
+}
+.pagina-emi{
+    background:rgba(255, 255, 255, 0.808);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.conteiner .card .face.face1 img{
+    width: 300px;
+}
+.tarjetas h3{
+   
+    margin-top: 20px;
+    font-family: 'Antonio', sans-serif;
+    font-weight: 900;
+    color:rgb(0, 0, 0);
+}
+.tarjetas a{
+text-decoration: none;
+color: #000;
+}
+a{
+    position: relative;
+    top: 20px;  
+    background: #03a9f4;  
+    font-family: 'Antonio', sans-serif;
+        text-decoration: none;
+        color: #fff;
+        margin: 20px;
+        margin-top: 20px;
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-weight: 900;
+        border: 3px #fff solid;
+}
+a:hover{
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    animation: 0.5s;
+    background: #03a9f4;
+}
