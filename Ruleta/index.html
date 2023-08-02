@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorteo</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	
+	<div class="contenedor">
+		
+		<div class="concursantes">
+			<h1>Concursantes</h1>
+			<div class="ruleta">
+				<canvas id="idcanvas" width="600" height="600"></canvas>
+				<div class="mark-winner"></div>
+			</div>
+			<br>
+			<button class="boton-ruleta" onclick="sortear()"> <img  class="imagen-boton-ruleta" src="./logo-emi.png" alt="" srcset=""></button>
+			
+		</div>
+		<div class="lista-concursantes">
+			<h2>Lista de Concursantes</h2>
+			<ul id="concursantes-list"></ul>
+		  </div>
+	  
+		  <div class="popup-container">
+			<div class="popup">
+			  <h2>¡Bienvenido!</h2>
+			  <p>Cargue el excel con los nombres (en la columna B)</p>
+			  <div class="cargar-excel">
+				<input type="file" accept=".xlsx" id="input-excel" style="display: none;">
+				<button class="input-excel" onclick="cargarExcel()">Cargar Excel</button>
+			  </div>
+			  <button onclick="closePopup()">Cerrar</button>
+			</div>
+		  </div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script type="text/javascript">
+    let array_concursantes = [];
+    let clic = 0; // Definimos la variable clic y le asignamos un valor inicial de 0.
+
+    let canvas = document.getElementById("idcanvas");
+    let context = canvas.getContext("2d");
+    let center = canvas.width / 2;
+
+    // Resto del código...
+
+    function drawRuleta() {
+      for (var i = 0; i < array_concursantes.length; i++) {
+        context.beginPath();
+        context.moveTo(center, center);
+        context.arc(center, center, center - 20, i * 2 * Math.PI / array_concursantes.length, (i + 1) * 2 * Math.PI / array_concursantes.length);
+        context.lineTo(center, center);
+        context.fillStyle = i % 2 === 0 ? "#fdd000" : "#174287";
+        context.fill();
+
+        context.save();
+        context.translate(center, center);
+        context.rotate(3 * 2 * Math.PI / (5 * array_concursantes.length) + i * 2 * Math.PI / array_concursantes.length);
+        context.translate(-center, -center);
+        context.font = "13px Comic Sans MS";
+        context.textAlign = "right";
+        context.fillStyle = "white";
+        context.fillText(array_concursantes[i], canvas.width - 30, center);
+        context.restore();
+      }
+    }
+
+    function drawConcursantesList() {
+      const concursantesList = document.getElementById("concursantes-list");
+      concursantesList.innerHTML = ""; // Limpiamos la lista antes de rellenarla nuevamente
+
+      for (let i = 0; i < array_concursantes.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = array_concursantes[i];
+        concursantesList.appendChild(listItem);
+      }
+    }
+
+    function cargarExcel() {
+      const input = document.getElementById('input-excel');
+      input.onchange = function (e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const sheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[sheetName];
+
+          // Leer solo la columna B (segunda columna) del archivo Excel
+          const columnB = XLSX.utils.sheet_to_json(worksheet, { header: 1 }).map((row) => row[1]);
+
+		  
+          // Filtrar y agregar los nombres de los concursantes al array
+          array_concursantes = columnB.filter((name) => typeof name === 'string');
+		  array_concursantes.splice(0, 4);
+          console.log("Nombres cargados:", array_concursantes);
+
+          drawRuleta();
+          drawConcursantesList();
+
+          document.getElementById("idestado").innerHTML = "Sortear";
+          clic = 0;
+          clearInterval(movement);
+        };
+
+        reader.readAsArrayBuffer(file);
+      };
+
+      input.click();
+    }
+</script>
+	<script type="text/javascript">
+		/* const array_concursantes=
+		[
+			
+			'jose'
+			,'Monica'
+			,'emanuel'
+			,'limberth'
+			,'zaceli'
+			,'victor'
+			,'daniel'
+			,'henrry'
+			,'marisol'
+			,'brighit'
+			,'gabriela'
+			,'janeth'
+			,'luis banda'
+			,'jorge'
+			,'andres'
+			,'enya'
+			,'renzo'
+			,'aracely'
+			,'alvaro'
+			,'libre'
+			
+		]; */
+
+		/* let canvas=document.getElementById("idcanvas");
+		let context=canvas.getContext("2d");
+		let center=canvas.width/2; */
+
+		context.beginPath();
+		context.moveTo(center,center);
+		context.arc(center,center,center,0, 2*Math.PI);
+		context.lineTo(center,center);
+		context.fillStyle ='#33333333';
+		context.fill();
+
+		context.beginPath();
+		context.moveTo(center,center);
+		context.arc(center,center,center-10,0, 2*Math.PI);
+		context.lineTo(center,center);
+		context.fillStyle ='black';
+		context.fill();
+
+		for (var i = 0; i < array_concursantes.length; i++) {
+			context.beginPath();
+			context.moveTo(center,center);
+			context.arc(center,center,center-20,i*2*Math.PI/array_concursantes.length, (i+1)*2*Math.PI/array_concursantes.length);
+			context.lineTo(center,center);
+			context.fillStyle = i % 2 === 0 ? "#fdd000" : "#174287";
+			context.fill();
+
+			context.save();
+			context.translate(center, center);
+			context.rotate(3*2*Math.PI/(5*array_concursantes.length)+i*2*Math.PI/array_concursantes.length);
+			context.translate(-center, -center);
+			context.font = "13px Comic Sans MS";
+			context.textAlign = "right";
+			context.fillStyle = "white";
+			context.fillText(array_concursantes[i], canvas.width-30, center);
+			context.restore();
+		}
+
+		let pos_ini=0;
+		/*let clic=0;*/
+		let movement;
+		function sortear(){
+			if (clic==0) {
+				let canvas=document.getElementById("idcanvas");
+				movement=setInterval(function(){
+					pos_ini+=10;
+					canvas.style.transform='rotate('+pos_ini+'deg)';
+				},10);
+				clic=1;
+				document.getElementById("idestado").innerHTML="Detener";
+			}else{
+				clearInterval(movement);
+				clic=0;
+				document.getElementById("idestado").innerHTML="Sortear";
+			}
+		}
+
+		function random_color() {
+  var hue = (240 - i * (240 / array_concursantes.length)) % 360; // Interpolación para el componente "hue"
+  return "hsl(" + hue + ", 100%, 50%)";
+}
+	</script>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>	  
+  <script>
+    function closePopup() {
+      const popupContainer = document.querySelector(".popup-container");
+      popupContainer.style.display = "none";
+    }
+  </script>
+</body>
+</html>

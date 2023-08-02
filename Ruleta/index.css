@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;box-sizing: content-box;
+}
+.contenedor{
+	margin: auto;
+	background: rgb(36, 61, 130);
+	color: white;
+	font-family: sans-serif;
+	width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+	display: flex;
+	
+}
+.concursantes{
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background: rgb(19, 50, 136);
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+h1{
+	text-align: center;
+}
+.ruleta{
+	display: flex;
+	background: rgba(208, 229, 48, 0);
+	width: 100%;
+	height: 85vh;
+	align-items: center;
+	justify-content: center;
+}
+canvas{
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	
+	
+}
+.boton-ruleta{
+	position: relative;
+	height: 100px;
+	width: 10%;
+	border-radius: 50%;
+	top: -51%;
+	left: 41%;
+	width: 50px;
+	padding: 10px 20px;
+	font-size: 18px;
+	background: #ffffff;
+	color: #fff;
+	border-style: none;
+	z-index: 100;
+	cursor: pointer;
+	margin-top: 10px;
+}
+.imagen-boton-ruleta{
+	width: 100%;
+	height: 100%;
+}
+.mark-winner{	
+	clip-path: polygon(0 10px,60px 0,60px 20px);
+	background: rgb(255, 255, 255);
+	width: 60px;
+	height: 20px;
+	top: 50%;
+	right: 18%;
+	z-index: 10;
+	box-shadow: 0 0 3px #33333399;
+}
+
+.popup-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+  }
+  .popup {
+	background-color: #202020;
+	padding: 20px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
+  .input-excel{
+background: rgb(255, 255, 255);
+width: 250px;
+height: 150px;
+font-size: 25px;  
+opacity: 30px ;
+margin: 5px;
+border-radius: 10px;
+}
+.lista-concursantes ul{
+font-size: 15px;
+
+}
